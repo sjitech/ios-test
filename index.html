@@ -1,9 +1,11 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  @media screen and (max-width:1000px) {
-  p {font-size: 300%!important;}
-}
+  style {
+    html {
+      -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+    }
+  }
 </head>
 <a href="itms-services://?action=download-manifest&url=https://github.com/sjitech/ios-test/raw/master/manifest.plist">Install App</a>
 </html>
