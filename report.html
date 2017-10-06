@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>営業日報</title>
@@ -11,11 +12,13 @@
             margin-top: 2px;
             margin-bottom: 2px;
         }
+
         .list-h {
             display: inline-block;
             text-align: center;
             width: 100%;
         }
+
         .list-item-active a {
             color: black;
             font-weight: bold;
@@ -26,25 +29,29 @@
         body {
             background: #e5e5e5;
         }
+
         input[type=date] {
             border: 1px solid #c4c4c4;
             border-radius: 5px;
             background-color: #fff;
             padding: 3px 5px;
-            box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
-            /*width: 190px;*/
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-<div class="container-fluid">
+<form class="container-fluid">
     <h4 class="text-center">営業日報 #userName</h4>
-    <input type="date" id="date" class="center-block" value="2017-10-06">
-    <textarea class="form-control" rows="12" id="report">#report</textarea>
-    <a class="btn btn-primary center-block" style="width: 200px">
+    <input type="date" name="date" value="2017-10-06">
+    <button name="show" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span>
+        表示
+    </button>
+    <button name="send" class="btn btn-danger pull-right">
         <span class="glyphicon glyphicon-envelope"></span>
         メール送信
-    </a>
-</div>
+    </button>
+    <textarea class="form-control" rows="12" id="report">#report</textarea>
+</form>
 </body>
 </html>
