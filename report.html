@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>営業日報</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <style>
+        .btn {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+        .list-h {
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        .list-item-active a {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* custom styles */
+        body {
+            background: #e5e5e5;
+        }
+        input[type=date] {
+            border: 1px solid #c4c4c4;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 3px 5px;
+            box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+            /*width: 190px;*/
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <h4 class="text-center">営業日報 #userName</h4>
+    <input type="date" id="date" class="center-block" value="2017-10-06">
+    <textarea class="form-control" rows="12" id="report">#report</textarea>
+    <a class="btn btn-primary center-block" style="width: 200px">
+        <span class="glyphicon glyphicon-envelope"></span>
+        メール送信
+    </a>
+</div>
+</body>
+</html>
