@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
     <style>
         .btn {
             margin-top: 2px;
@@ -30,36 +31,37 @@
             overflow-wrap: normal;
             overflow-x: scroll;
         }
+
+        .row {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
     </style>
-    <script>
-      function copy(str) {
-        let on_copy = function (e) {
-          e.clipboardData.setData('text/plain', str);
-          e.preventDefault();
-        };
-        document.addEventListener('copy', on_copy);
-        document.execCommand('copy');
-        document.removeEventListener('copy', on_copy);
-      }
-    </script>
 </head>
 <body>
-<form class="container-fluid">
-    <h4 class="text-center">営業日報 【#userName】</h4>
-    <input type="date" name="date" value="#date">
-    <button name="show" class="btn btn-primary">
-        <span class="glyphicon glyphicon-search"></span>
-        表示
-    </button>
-    <button class="btn btn-primary" onclick="copy(document.getElementById('report').value); return false">
-        <span class="glyphicon glyphicon-copy"></span>
-        コピー
-    </button>
-    <button name="send" class="btn btn-danger pull-right">
-        <span class="glyphicon glyphicon-envelope"></span>
-        メール送信
-    </button>
-    <textarea name="report" id="report" class="form-control" rows="12">#report</textarea>
-</form>
+<div class="container-fluid">
+    <form>
+        <h4 class="text-center">営業日報 【#userName】</h4>
+        <input type="date" name="date" value="#date">
+        <button name="show" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>
+            表示
+        </button>
+        <button class="row">
+            <span class="btn btn-primary" id="copy" data-clipboard-target="#report">
+                <span class="glyphicon glyphicon-copy"></span>
+                コピー
+            </span>
+            <button name="send" class="btn btn-danger pull-right">
+                <span class="glyphicon glyphicon-envelope"></span>
+                メール送信
+            </button>
+        </button>
+        <textarea name="report" id="report" class="form-control" rows="12">#report</textarea>
+    </form>
+</div>
+<script>
+  console.log(new Clipboard('#copy', {container: document.getElementById('copy')}));
+</script>
 </body>
 </html>
