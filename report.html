@@ -31,6 +31,17 @@
             overflow-x: scroll;
         }
     </style>
+    <script>
+      function copy(str) {
+        let on_copy = function (e) {
+          e.clipboardData.setData('text/plain', str);
+          e.preventDefault();
+        };
+        document.addEventListener('copy', on_copy);
+        document.execCommand('copy');
+        document.removeEventListener('copy', on_copy);
+      }
+    </script>
 </head>
 <body>
 <form class="container-fluid">
@@ -40,11 +51,15 @@
         <span class="glyphicon glyphicon-search"></span>
         表示
     </button>
+    <button name="show" class="btn btn-primary" onclick="copy(document.getElementById('report').value)">
+        <span class="glyphicon glyphicon-copy"></span>
+        コピー
+    </button>
     <button name="send" class="btn btn-danger pull-right">
         <span class="glyphicon glyphicon-envelope"></span>
         メール送信
     </button>
-    <textarea name="report" class="form-control" rows="12">#report</textarea>
+    <textarea name="report" id="report" class="form-control" rows="12">#report</textarea>
 </form>
 </body>
 </html>
