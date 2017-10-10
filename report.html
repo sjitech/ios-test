@@ -42,12 +42,14 @@
 <div class="container-fluid">
     <form>
         <h4 class="text-center">営業日報 【#userName】</h4>
-        <input type="date" name="date" value="#date">
-        <button name="show" class="btn btn-primary">
-            <span class="glyphicon glyphicon-search"></span>
-            表示
-        </button>
-        <button class="row">
+        <div class="row">
+            <input type="date" name="date" value="#date">
+            <button name="show" class="btn btn-primary">
+                <span class="glyphicon glyphicon-search"></span>
+                表示
+            </button>
+        </div>
+        <div class="row">
             <span class="btn btn-primary" id="copy" data-clipboard-target="#report">
                 <span class="glyphicon glyphicon-copy"></span>
                 コピー
@@ -56,12 +58,12 @@
                 <span class="glyphicon glyphicon-envelope"></span>
                 メール送信
             </button>
-        </button>
+        </div>
         <textarea name="report" id="report" class="form-control" rows="12">#report</textarea>
     </form>
 </div>
 <script>
-  console.log(new Clipboard('#copy', {container: document.getElementById('copy')}));
+  console.log(new Clipboard('#copy'/*, {container: document.getElementById('copy')}*/));
 </script>
 </body>
 </html>
